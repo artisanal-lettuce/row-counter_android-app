@@ -1,0 +1,47 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="44dp"
+    android:viewportWidth="320"
+    android:viewportHeight="44">
+
+    <!-- Background -->
+    <path
+        android:fillColor="#F5F5F5"
+        android:pathData="M8,0 L312,0 A8,8 0 0 1 320,8 L320,36 A8,8 0 0 1 312,44 L8,44 A8,8 0 0 1 0,36 L0,8 A8,8 0 0 1 8,0 Z" />
+
+    <!-- Stroke/Outline -->
+    <path
+        android:strokeColor="#DDDDDD"
+        android:strokeWidth="1"
+        android:pathData="M8,0.5 L312,0.5 A7.5,7.5 0 0 1 319.5,8 L319.5,36 A7.5,7.5 0 0 1 312,43.5 L8,43.5 A7.5,7.5 0 0 1 0.5,36 L0.5,8 A7.5,7.5 0 0 1 8,0.5 Z" />
+
+    <!-- Project Name Placeholder Text -->
+    <path
+        android:fillColor="#333333"
+        android:pathData="M20,18 L120,18 L120,26 L20,26 Z" />
+
+    <!-- Minus Button -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M180,4 L216,4 A4,4 0 0 1 220,8 L220,36 A4,4 0 0 1 216,40 L180,40 A4,4 0 0 1 176,36 L176,8 A4,4 0 0 1 180,4 Z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M192,21 L204,21 L204,23 L192,23 Z" />
+
+    <!-- Count Placeholder -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M235,14 L265,14 L265,30 L235,30 Z" />
+
+    <!-- Plus Button -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M284,4 L316,4 A4,4 0 0 1 320,8 L320,36 A4,4 0 0 1 316,40 L284,40 A4,4 0 0 1 280,36 L280,8 A4,4 0 0 1 284,4 Z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M294,21 L306,21 L306,23 L294,23 Z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="M299,16 L301,16 L301,28 L299,28 Z" />
+
+</vector>
