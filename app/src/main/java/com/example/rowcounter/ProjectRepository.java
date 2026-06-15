@@ -33,6 +33,10 @@ public class ProjectRepository {
         });
     }
 
+    public LiveData<Project> getProjectById(int id) {
+        return projectDao.getProjectById(id);
+    }
+
     public Project getProjectByIdSync(int id) {
         return projectDao.getProjectByIdSync(id);
     }

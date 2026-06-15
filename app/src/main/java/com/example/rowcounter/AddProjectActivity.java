@@ -61,13 +61,10 @@ public class AddProjectActivity extends AppCompatActivity {
         int projectId = getIntent().getIntExtra("PROJECT_ID", -1);
         if (projectId != -1) {
             setTitle("Edit Project");
-            projectViewModel.getAllProjects().observe(this, projects -> {
-                for (Project p : projects) {
-                    if (p.getId() == projectId) {
-                        existingProject = p;
-                        populateFields();
-                        break;
-                    }
+            projectViewModel.getProjectById(projectId).observe(this, project -> {
+                if (project != null) {
+                    existingProject = project;
+                    populateFields();
                 }
             });
         }

@@ -7,10 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.bumptech.glide.Glide;
-import com.example.rowcounter.data.AppDatabase;
 import com.example.rowcounter.data.Project;
 import com.example.rowcounter.databinding.ActivityProjectDetailBinding;
 
@@ -41,8 +42,7 @@ public class ProjectDetailActivity extends AppCompatActivity {
             return;
         }
 
-        AppDatabase db = AppDatabase.getDatabase(this);
-        db.projectDao().getProjectById(projectId).observe(this, project -> {
+        projectViewModel.getProjectById(projectId).observe(this, project -> {
             if (project != null) {
                 currentProject = project;
                 updateUI();

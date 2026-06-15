@@ -27,4 +27,8 @@ public class ProjectViewModel extends AndroidViewModel {
     public void update(Project project) {
         repository.update(project);
     }
+
+    public LiveData<Project> getProjectById(int id) {
+        return repository.getProjectById(id);
+    }
 }
