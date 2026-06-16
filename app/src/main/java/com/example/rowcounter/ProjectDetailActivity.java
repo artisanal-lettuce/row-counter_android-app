@@ -122,17 +122,23 @@ public class ProjectDetailActivity extends AppCompatActivity {
         
         binding.textDetailName.setTypeface(tf);
         binding.textDetailCount.setTypeface(tf);
+        binding.textDetailGoal.setTypeface(tf);
         binding.textDetailDescription.setTypeface(tf);
 
         binding.buttonPlus.setBackgroundTintList(ColorStateList.valueOf(currentProject.getButtonColor()));
         binding.buttonMinus.setBackgroundTintList(ColorStateList.valueOf(currentProject.getButtonColor()));
 
         if (currentProject.getGoalCount() != null && currentProject.getGoalCount() > 0) {
+            binding.textDetailGoal.setVisibility(View.VISIBLE);
+            binding.textDetailGoal.setText(getString(R.string.goal_format, currentProject.getGoalCount()));
+            binding.textDetailGoal.setTextColor(currentProject.getFontColor());
+
             binding.detailProgressBar.setVisibility(View.VISIBLE);
             binding.detailProgressBar.setMax(currentProject.getGoalCount());
             binding.detailProgressBar.setProgress(currentProject.getCurrentCount());
             binding.detailProgressBar.setProgressTintList(ColorStateList.valueOf(currentProject.getFontColor()));
         } else {
+            binding.textDetailGoal.setVisibility(View.GONE);
             binding.detailProgressBar.setVisibility(View.GONE);
         }
 
