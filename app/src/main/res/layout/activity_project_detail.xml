@@ -32,7 +32,7 @@
                 android:layout_height="48dp"
                 android:layout_alignParentEnd="true"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Settings"
+                android:contentDescription="@string/settings_description"
                 android:src="@drawable/ic_settings" />
 
         </RelativeLayout>

@@ -1,4 +1,31 @@
 <resources>
     <string name="app_name">RowCounter</string>
     <string name="goal_format">Goal: %1$d</string>
+    <string name="project_name_hint">Project Name</string>
+    <string name="row_goal_hint">Row Goal (optional)</string>
+    <string name="description_hint">Description (links allowed)</string>
+    <string name="bg_color_label">Project Background Color</string>
+    <string name="font_color_label">Project Font Color</string>
+    <string name="button_color_label">Project Button Color</string>
+    <string name="choose_font_style">Choose Font Style</string>
+    <string name="font_sans">Sans</string>
+    <string name="font_serif">Serif</string>
+    <string name="font_mono">Mono</string>
+    <string name="project_images_label">Project Images (Max 3)</string>
+    <string name="save_project">Save Project</string>
+    <string name="edit_project_title">Edit Project</string>
+    <string name="error_name_required">Name is required</string>
+    <string name="settings_description">Settings</string>
+    <string name="image_preview_description">Project image preview</string>
+    <string name="color_preview_description">Tap to choose color</string>
+    <string name="add_project_description">Add Project</string>
+    <string name="choose_color_title">Choose Color</string>
+    <string name="select_button">Select</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="delete_project">Delete Project</string>
+    <string name="delete_confirmation_title">Delete Project?</string>
+    <string name="delete_confirmation_message">Are you sure you want to delete this project? This action cannot be undone.</string>
+    <string name="delete_button">Delete</string>
+    <string name="tap_to_setup">Tap to setup</string>
+    <string name="placeholder_count">—</string>
 </resources>

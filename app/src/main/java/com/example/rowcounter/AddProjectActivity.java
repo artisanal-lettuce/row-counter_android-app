@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -60,7 +61,7 @@ public class AddProjectActivity extends AppCompatActivity {
 
         int projectId = getIntent().getIntExtra("PROJECT_ID", -1);
         if (projectId != -1) {
-            setTitle("Edit Project");
+            setTitle(R.string.edit_project_title);
             projectViewModel.getProjectById(projectId).observe(this, project -> {
                 if (project != null) {
                     existingProject = project;
@@ -73,9 +74,29 @@ public class AddProjectActivity extends AppCompatActivity {
         setupImagePickers();
 
         binding.buttonSave.setOnClickListener(v -> saveProject());
+        binding.buttonDelete.setOnClickListener(v -> showDeleteConfirmation());
+    }
+
+    private void showDeleteConfirmation() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.delete_confirmation_title)
+                .setMessage(R.string.delete_confirmation_message)
+                .setPositiveButton(R.string.delete_button, (dialog, which) -> {
+                    if (existingProject != null) {
+                        projectViewModel.delete(existingProject);
+                        // Redirect to MainActivity or finish based on requirements
+                        Intent intent = new Intent(this, MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .setNegativeButton(R.string.cancel_button, null)
+                .show();
     }
 
     private void populateFields() {
+        binding.buttonDelete.setVisibility(View.VISIBLE);
         binding.editProjectName.setText(existingProject.getName());
         binding.editGoalCount.setText(existingProject.getGoalCount() != null ? String.valueOf(existingProject.getGoalCount()) : "");
         binding.editDescription.setText(existingProject.getDescription());
@@ -134,9 +155,9 @@ public class AddProjectActivity extends AppCompatActivity {
         }
 
         ColorPickerDialog.Builder builder = new ColorPickerDialog.Builder(this)
-                .setTitle("Choose Color")
+                .setTitle(getString(R.string.choose_color_title))
                 .setPreferenceName(prefName)
-                .setPositiveButton("Select",
+                .setPositiveButton(getString(R.string.select_button),
                         (ColorEnvelopeListener) (envelope, fromUser) -> {
                             int color = envelope.getColor();
                             if (type == 0) {
@@ -150,7 +171,7 @@ public class AddProjectActivity extends AppCompatActivity {
                                 binding.colorButtonPreview.setBackgroundColor(color);
                             }
                         })
-                .setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss())
+                .setNegativeButton(getString(R.string.cancel_button), (dialogInterface, i) -> dialogInterface.dismiss())
                 .attachAlphaSlideBar(true)
                 .attachBrightnessSlideBar(true);
 

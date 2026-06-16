@@ -13,7 +13,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Project Name">
+            android:hint="@string/project_name_hint">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_project_name"
                 android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="Row Goal (optional)">
+            android:hint="@string/row_goal_hint">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_goal_count"
                 android:layout_width="match_parent"
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="Description (links allowed)">
+            android:hint="@string/description_hint">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_description"
                 android:layout_width="match_parent"
@@ -61,12 +61,13 @@
                 android:background="#FFFFFF"
                 android:clickable="true"
                 android:focusable="true"
+                android:contentDescription="@string/color_preview_description"
                 android:foreground="?android:attr/selectableItemBackground" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Project Background Color"
+                android:text="@string/bg_color_label"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -85,12 +86,13 @@
                 android:background="#000000"
                 android:clickable="true"
                 android:focusable="true"
+                android:contentDescription="@string/color_preview_description"
                 android:foreground="?android:attr/selectableItemBackground" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Project Font Color"
+                android:text="@string/font_color_label"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -109,12 +111,13 @@
                 android:background="#808080"
                 android:clickable="true"
                 android:focusable="true"
+                android:contentDescription="@string/color_preview_description"
                 android:foreground="?android:attr/selectableItemBackground" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Project Button Color"
+                android:text="@string/button_color_label"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -122,7 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Choose Font Style"
+            android:text="@string/choose_font_style"
             android:textStyle="bold" />
 
         <RadioGroup
@@ -134,7 +137,7 @@
                 android:id="@+id/radio_sans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sans"
+                android:text="@string/font_sans"
                 android:typeface="sans"
                 android:checked="true" />
             <RadioButton
@@ -142,20 +145,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:typeface="serif"
-                android:text="Serif" />
+                android:text="@string/font_serif" />
             <RadioButton
                 android:id="@+id/radio_mono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:typeface="monospace"
-                android:text="Mono" />
+                android:text="@string/font_mono" />
         </RadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Project Images (Max 3)"
+            android:text="@string/project_images_label"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -171,6 +174,7 @@
                 android:scaleType="centerCrop"
                 android:src="@android:drawable/ic_menu_camera"
                 android:background="#EEE"
+                android:contentDescription="@string/image_preview_description"
                 android:layout_margin="4dp" />
             <ImageView
                 android:id="@+id/image_2"
@@ -180,6 +184,7 @@
                 android:scaleType="centerCrop"
                 android:src="@android:drawable/ic_menu_camera"
                 android:background="#EEE"
+                android:contentDescription="@string/image_preview_description"
                 android:layout_margin="4dp" />
             <ImageView
                 android:id="@+id/image_3"
@@ -189,6 +194,7 @@
                 android:scaleType="centerCrop"
                 android:src="@android:drawable/ic_menu_camera"
                 android:background="#EEE"
+                android:contentDescription="@string/image_preview_description"
                 android:layout_margin="4dp" />
         </LinearLayout>
 
@@ -197,7 +203,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Save Project" />
+            android:text="@string/save_project" />
+
+        <Button
+            android:id="@+id/button_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/delete_project"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
 
     </LinearLayout>
 </ScrollView>

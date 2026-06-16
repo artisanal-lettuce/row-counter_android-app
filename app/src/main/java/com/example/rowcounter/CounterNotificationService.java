@@ -174,6 +174,13 @@ public class CounterNotificationService extends Service {
         return PendingIntent.getService(this, action.hashCode() + projectId, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
     }
 
+    @Override
+    public void onTaskRemoved(Intent rootIntent) {
+        stopForeground(true);
+        stopSelf();
+        super.onTaskRemoved(rootIntent);
+    }
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {

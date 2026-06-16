@@ -28,6 +28,10 @@ public class ProjectViewModel extends AndroidViewModel {
         repository.update(project);
     }
 
+    public void delete(Project project) {
+        repository.delete(project);
+    }
+
     public LiveData<Project> getProjectById(int id) {
         return repository.getProjectById(id);
     }

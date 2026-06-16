@@ -47,6 +47,8 @@ public class ProjectDetailActivity extends AppCompatActivity {
                 currentProject = project;
                 updateUI();
                 startNotificationService();
+            } else {
+                finish();
             }
         });
 

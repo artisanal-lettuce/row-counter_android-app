@@ -33,6 +33,12 @@ public class ProjectRepository {
         });
     }
 
+    public void delete(Project project) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            projectDao.deleteProject(project);
+        });
+    }
+
     public LiveData<Project> getProjectById(int id) {
         return projectDao.getProjectById(id);
     }
